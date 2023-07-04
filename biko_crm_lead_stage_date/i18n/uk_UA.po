@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* biko_crm_lead_stage_date
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-04 23:01+0000\n"
+"PO-Revision-Date: 2023-07-05 02:01+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.3.2\n"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model,name:biko_crm_lead_stage_date.model_crm_stage_date
+msgid "CRM Stage change date"
+msgstr "CRM Stage change date"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_stage_date__change_date
+msgid "Change Date"
+msgstr "Дата зміни"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_stage_date__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_stage_date__create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_stage_date__display_name
+msgid "Display Name"
+msgstr "Відображувана назва"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_lead__id
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_stage_date__id
+msgid "ID"
+msgstr "ID"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_stage_date____last_update
+msgid "Last Modified on"
+msgstr "Останні зміни на"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_stage_date__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_stage_date__write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_stage_date__lead_id
+msgid "Lead"
+msgstr "Lead"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model,name:biko_crm_lead_stage_date.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Лід/Нагода"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_stage_date__stage_id
+msgid "Stage"
+msgstr "Етап"
+
+#. module: biko_crm_lead_stage_date
+#: model:ir.model.fields,field_description:biko_crm_lead_stage_date.field_crm_lead__lead_stage_date_ids
+#: model_terms:ir.ui.view,arch_db:biko_crm_lead_stage_date.biko_crm_lead_view_form_inherit
+msgid "Stage change date"
+msgstr "Дата зміни етапу"
