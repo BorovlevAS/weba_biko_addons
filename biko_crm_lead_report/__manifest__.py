@@ -10,6 +10,7 @@
     "data": [
         "reports/lead_report_views.xml",
         "wizards/lead_report_wizard_views.xml",
+        "views/res_config_settings.xml",
         "security/ir.model.access.csv",
     ],
     "license": "LGPL-3",

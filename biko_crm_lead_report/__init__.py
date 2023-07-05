@@ -1,1 +1,1 @@
-from . import reports, wizards
+from . import models, reports, wizards

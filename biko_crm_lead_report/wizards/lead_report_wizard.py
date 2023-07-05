@@ -1,5 +1,3 @@
-# flake8: noqa
-# pylint: skip-file
 import uuid
 
 from odoo import _, fields, models
@@ -22,12 +20,38 @@ class StockMovesWizard(models.TransientModel):
         if self.end_date < self.start_date:
             raise ValidationError(_("End Date should be greater than Start Date."))
 
+    def _add_report_line(
+        self, unique_id, line_group, line_order, line_caption, line_value
+    ):
+        self.env["biko.consolidated.report"].create(
+            {
+                "uid": unique_id,
+                "company_id": self.company_id.id,
+                "line_group": line_group,
+                "line_order": line_order,
+                "line_caption": line_caption,
+                "line_value": line_value,
+            }
+        )
+
+    def _get_stage_from_param(self, param_name):
+        value = self.env["ir.config_parameter"].sudo().get_param(param_name, 0)
+        return int(value)
+
     def fill_report_data(self, unique_id):
-        tender_figure_out_id = 6
-        tender_subcontract_id = 7
-        send_offer_id = 32
-        init_project_id = 35
-        get_prepay_id = 36
+        tender_figure_out_id = self._get_stage_from_param(
+            "biko_crm_lead_report.stage_figure_out_id"
+        )
+        tender_subcontract_id = self._get_stage_from_param(
+            "biko_crm_lead_report.stage_subcontract_id"
+        )
+        send_offer_id = self._get_stage_from_param(
+            "biko_crm_lead_report.stage_offer_id"
+        )
+        init_project_id = self._get_stage_from_param(
+            "biko_crm_lead_report.init_project_id"
+        )
+        get_prepay_id = self._get_stage_from_param("biko_crm_lead_report.get_prepay_id")
 
         leads_figure_out_count = self.env["crm.stage.date"].search_count(
             [
@@ -36,6 +60,15 @@ class StockMovesWizard(models.TransientModel):
                 ("stage_id", "=", tender_figure_out_id),
             ],
         )
+
+        self._add_report_line(
+            unique_id,
+            "00_tenders",
+            0,
+            "1.1. Кількість опрацьованих листів з тендерами",
+            leads_figure_out_count,
+        )
+
         leads_subcontractor_count = self.env["crm.stage.date"].search_count(
             [
                 ("change_date", ">=", self.start_date),
@@ -43,6 +76,14 @@ class StockMovesWizard(models.TransientModel):
                 ("stage_id", "=", tender_subcontract_id),
             ],
         )
+        self._add_report_line(
+            unique_id,
+            "00_tenders",
+            1,
+            "1.2. Кількість тендерів на субпідряд",
+            leads_subcontractor_count,
+        )
+
         lead_offer_ids = (
             self.env["crm.stage.date"]
             .search(
@@ -55,9 +96,33 @@ class StockMovesWizard(models.TransientModel):
             .mapped("lead_id")
         )
         leads_offers_count = len(lead_offer_ids)
+        self._add_report_line(
+            unique_id,
+            "01_commercial",
+            2,
+            "2.1. Кількість відправленних КП",
+            leads_offers_count,
+        )
+
         leads_offer_sum = sum([lead.expected_revenue for lead in lead_offer_ids])
-        lead_offer_avg = leads_offer_sum / (
-            leads_offers_count if leads_offers_count > 0 else 0
+        self._add_report_line(
+            unique_id,
+            "01_commercial",
+            3,
+            "2.2. Сума з відправленних КП",
+            leads_offer_sum,
+        )
+
+        lead_offer_avg = (
+            (leads_offer_sum / leads_offers_count) if leads_offers_count > 0 else 0
+        )
+
+        self._add_report_line(
+            unique_id,
+            "01_commercial",
+            4,
+            "2.3. Середній чек КП",
+            lead_offer_avg,
         )
 
         lead_init_project_sum = sum(
@@ -72,6 +137,13 @@ class StockMovesWizard(models.TransientModel):
             .mapped("lead_id")
             .mapped("expected_revenue")
         )
+        self._add_report_line(
+            unique_id,
+            "03_money",
+            5,
+            "3.1. Сума підписаних договорів",
+            lead_init_project_sum,
+        )
 
         lead_prepay_sum = sum(
             self.env["crm.stage.date"]
@@ -84,6 +156,13 @@ class StockMovesWizard(models.TransientModel):
             )
             .mapped("lead_id")
             .mapped("x_advance_pay")
+        )
+        self._add_report_line(
+            unique_id,
+            "03_money",
+            6,
+            "3.2. Сума авансів",
+            lead_prepay_sum,
         )
 
         lead_lost_sum = sum(
@@ -99,8 +178,13 @@ class StockMovesWizard(models.TransientModel):
             )
             .mapped("expected_revenue")
         )
-
-        print(".....")
+        self._add_report_line(
+            unique_id,
+            "",
+            7,
+            "4. Сума провалених угод",
+            lead_lost_sum,
+        )
 
     def open_report(self):
         self.check_date_range()
@@ -109,9 +193,9 @@ class StockMovesWizard(models.TransientModel):
         self.fill_report_data(unique_id)
 
         action = {
-            "name": _(
-                "Consolidated report ({start_date:%d-%m-%Y} - {end_date:%d-%m-%Y})"
-            ).format(start_date=self.start_date, end_date=self.end_date),
+            "name": _("Consolidated report ({start_date} - {end_date})").format(
+                start_date=self.start_date, end_date=self.end_date
+            ),
             "type": "ir.actions.act_window",
             "view_mode": "pivot",
             "view_type": "pivot",

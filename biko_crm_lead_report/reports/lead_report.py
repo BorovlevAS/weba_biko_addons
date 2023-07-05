@@ -11,9 +11,9 @@ class ConsolidatedLeadReport(models.Model):
 
     line_group = fields.Selection(
         selection=[
-            ("00_tenders", "Tenders"),
-            ("01_commercial", "Offers"),
-            ("03_money", "Money"),
+            ("00_tenders", "ТЕНДЕРА"),
+            ("01_commercial", "КОМЕРЦІЙНІ ПРОПОЗИЦІЇ"),
+            ("03_money", "ГРОШІ"),
         ],
     )
 
