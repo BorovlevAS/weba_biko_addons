@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form_inherit" model="ir.ui.view">
+            <field name="name">BIKO: res condig settings</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="crm.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <div data-key="crm" position="inside">
+                    <div id="crm_lead_cons_report_settings">
+                        <h2>Consolidated report settings</h2>
+                        <div class="row mt16 o_settings_container" name="lead_cons_report_settings_container">
+                            <div class="col-lg-6 o_setting_box">
+                                <div class="o_setting_right_pane" id="stage_figure_out_id_settings">
+                                    <label string="Stage 'Tender figure out'" for="stage_figure_out_id" />
+                                    <field name="stage_figure_out_id" />
+                                </div>
+                                <div class="o_setting_right_pane" id="stage_subcontract_id_settings">
+                                    <label string="Stage 'Tender subcontract'" for="stage_subcontract_id" />
+                                    <field name="stage_subcontract_id" />
+                                </div>
+                                <div class="o_setting_right_pane" id="stage_subcontract_id_settings">
+                                    <label string="Stage 'Offer was sent'" for="stage_offer_id" />
+                                    <field name="stage_offer_id" />
+                                </div>
+                                <div class="o_setting_right_pane" id="stage_subcontract_id_settings">
+                                    <label string="Stage 'Init project'" for="init_project_id" />
+                                    <field name="init_project_id" />
+                                </div>
+                                <div class="o_setting_right_pane" id="stage_subcontract_id_settings">
+                                    <label string="Stage 'Advance payment'" for="get_prepay_id" />
+                                    <field name="get_prepay_id" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>
