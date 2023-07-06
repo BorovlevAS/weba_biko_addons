@@ -13,6 +13,7 @@ class StockMovesWizard(models.TransientModel):
         string="Company",
         default=lambda self: self.env.user.company_id.id,
     )
+    manager_ids = fields.Many2many("res.users", string="Salespersons")
     start_date = fields.Date(string="Start Date")
     end_date = fields.Date(string="End Date")
 
@@ -38,6 +39,18 @@ class StockMovesWizard(models.TransientModel):
         value = self.env["ir.config_parameter"].sudo().get_param(param_name, 0)
         return int(value)
 
+    def _generate_domain(self, stage_id):
+        domain = [
+            ("change_date", ">=", self.start_date),
+            ("change_date", "<=", self.end_date),
+            ("stage_id", "=", stage_id),
+        ]
+
+        if self.manager_ids:
+            domain += [("lead_id.user_id", "in", self.manager_ids.ids)]
+
+        return domain
+
     def fill_report_data(self, unique_id):
         tender_figure_out_id = self._get_stage_from_param(
             "biko_crm_lead_report.stage_figure_out_id"
@@ -53,12 +66,10 @@ class StockMovesWizard(models.TransientModel):
         )
         get_prepay_id = self._get_stage_from_param("biko_crm_lead_report.get_prepay_id")
 
+        domain = self._generate_domain(tender_figure_out_id)
+
         leads_figure_out_count = self.env["crm.stage.date"].search_count(
-            [
-                ("change_date", ">=", self.start_date),
-                ("change_date", "<=", self.end_date),
-                ("stage_id", "=", tender_figure_out_id),
-            ],
+            domain,
         )
 
         self._add_report_line(
@@ -69,12 +80,10 @@ class StockMovesWizard(models.TransientModel):
             leads_figure_out_count,
         )
 
+        domain = self._generate_domain(tender_subcontract_id)
+
         leads_subcontractor_count = self.env["crm.stage.date"].search_count(
-            [
-                ("change_date", ">=", self.start_date),
-                ("change_date", "<=", self.end_date),
-                ("stage_id", "=", tender_subcontract_id),
-            ],
+            domain,
         )
         self._add_report_line(
             unique_id,
@@ -84,17 +93,16 @@ class StockMovesWizard(models.TransientModel):
             leads_subcontractor_count,
         )
 
+        domain = self._generate_domain(send_offer_id)
+
         lead_offer_ids = (
             self.env["crm.stage.date"]
             .search(
-                [
-                    ("change_date", ">=", self.start_date),
-                    ("change_date", "<=", self.end_date),
-                    ("stage_id", "=", send_offer_id),
-                ],
+                domain,
             )
             .mapped("lead_id")
         )
+
         leads_offers_count = len(lead_offer_ids)
         self._add_report_line(
             unique_id,
@@ -125,14 +133,12 @@ class StockMovesWizard(models.TransientModel):
             lead_offer_avg,
         )
 
+        domain = self._generate_domain(init_project_id)
+
         lead_init_project_sum = sum(
             self.env["crm.stage.date"]
             .search(
-                [
-                    ("change_date", ">=", self.start_date),
-                    ("change_date", "<=", self.end_date),
-                    ("stage_id", "=", init_project_id),
-                ],
+                domain,
             )
             .mapped("lead_id")
             .mapped("expected_revenue")
@@ -145,14 +151,12 @@ class StockMovesWizard(models.TransientModel):
             lead_init_project_sum,
         )
 
+        domain = self._generate_domain(get_prepay_id)
+
         lead_prepay_sum = sum(
             self.env["crm.stage.date"]
             .search(
-                [
-                    ("change_date", ">=", self.start_date),
-                    ("change_date", "<=", self.end_date),
-                    ("stage_id", "=", get_prepay_id),
-                ],
+                domain,
             )
             .mapped("lead_id")
             .mapped("x_advance_pay")
@@ -165,16 +169,21 @@ class StockMovesWizard(models.TransientModel):
             lead_prepay_sum,
         )
 
+        domain = [
+            ("date_closed", ">=", self.start_date),
+            ("date_closed", "<=", self.end_date),
+            ("probability", "=", 0),
+            ("active", "=", False),
+        ]
+
+        if self.manager_ids:
+            domain += [("user_id", "in", self.manager_ids.ids)]
+
         lead_lost_sum = sum(
             self.env["crm.lead"]
             .with_context(active_test=False)
             .search(
-                [
-                    ("date_closed", ">=", self.start_date),
-                    ("date_closed", "<=", self.end_date),
-                    ("probability", "=", 0),
-                    ("active", "=", False),
-                ],
+                domain,
             )
             .mapped("expected_revenue")
         )

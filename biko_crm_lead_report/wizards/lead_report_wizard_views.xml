@@ -8,6 +8,7 @@
                 <sheet>
                     <group>
                         <field name="company_id" />
+                        <field name="manager_ids" widget="many2many_tags" />
                     </group>
                     <label for="start_date" string="Period report print" />
                     <div class="o_row">
