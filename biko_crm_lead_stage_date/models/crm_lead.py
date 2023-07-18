@@ -43,18 +43,19 @@ class CrmLead(models.Model):
     def create(self, vals):
         lead = super().create(vals)
         stage_id = lead.stage_id
-        lead.update(
-            {
-                "lead_stage_date_ids": [
-                    (
-                        0,
-                        0,
-                        {
-                            "change_date": fields.Datetime.now(),
-                            "stage_id": stage_id.id,
-                        },
-                    )
-                ]
-            }
-        )
+        if stage_id:
+            lead.update(
+                {
+                    "lead_stage_date_ids": [
+                        (
+                            0,
+                            0,
+                            {
+                                "change_date": fields.Datetime.now(),
+                                "stage_id": stage_id.id,
+                            },
+                        )
+                    ]
+                }
+            )
         return lead
