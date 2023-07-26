@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="biko_pf_template_co_geodesy" model="biko.pf.template">
+            <field name="name">Commercial offer geodesy and geology (docx)</field>
+            <field name="res_model">crm.lead</field>
+            <field name="datas" file="biko_crm_lead_pf/static/template/co_geodesy.docx" type="base64"/>
+            <field name="fname">co_geodesy.docx</field>
+            <field name="datas_stamp" file="biko_crm_lead_pf/static/template/co_geodesy_stamp.docx" type="base64"/>
+            <field name="fname_stamp">co_geodesy_stamp.docx</field>
+            <field name="report_name">co_geodesy</field>
+            <!-- <field name="with_stamp"  eval="True"/> -->
+        </record>
+
+        <record id="biko_pf_template_co_laser" model="biko.pf.template">
+            <field name="name">Commercial offer 3D laser scanning (docx)</field>
+            <field name="res_model">crm.lead</field>
+            <field name="datas" file="biko_crm_lead_pf/static/template/co_laser.docx" type="base64"/>
+            <field name="fname">co_laser.docx</field>            
+            <field name="datas_stamp" file="biko_crm_lead_pf/static/template/co_laser_stamp.docx" type="base64"/>
+            <field name="fname_stamp">co_laser_stamp.docx</field>
+            <field name="report_name">co_laser</field>
+            <!-- <field name="with_stamp"  eval="False"/> -->
+        </record>
+
+        <record id="biko_pf_template_invoice_vat" model="biko.pf.template">
+            <field name="name">Invoice for payment with VAT (docx)</field>
+            <field name="res_model">crm.lead</field>
+            <field name="datas" file="biko_crm_lead_pf/static/template/invoice_vat.docx" type="base64"/>
+            <field name="fname">invoice_vat.docx</field>
+            <field name="datas_stamp" file="biko_crm_lead_pf/static/template/invoice_vat_stamp.docx" type="base64"/>
+            <field name="fname_stamp">invoice_vat_stamp.docx</field>
+            <field name="report_name">invoice_vat</field>            
+            <!-- <field name="with_stamp"  eval="False"/> -->
+        </record>     
+        
+         <record id="biko_pf_template_invoice_without_vat" model="biko.pf.template">
+            <field name="name">Invoice for payment without VAT (docx)</field>
+            <field name="res_model">crm.lead</field>
+            <field name="datas" file="biko_crm_lead_pf/static/template/invoice_without_vat.docx" type="base64"/>
+            <field name="fname">invoice_without_vat.docx</field>
+            <field name="datas_stamp" file="biko_crm_lead_pf/static/template/invoice_without_vat_stamp.docx" type="base64"/>
+            <field name="fname_stamp">invoice_without_vat_stamp.docx</field>            
+            <field name="report_name">invoice_without_vat</field>
+            <!-- <field name="with_stamp"  eval="False"/> -->
+        </record> 
+        
+        <record id="biko_pf_template_act_vat" model="biko.pf.template">
+            <field name="name">Act of completed works with VAT (docx)</field>
+            <field name="res_model">crm.lead</field>
+            <field name="datas" file="biko_crm_lead_pf/static/template/act_vat.docx" type="base64"/>
+            <field name="fname">act_vat.docx</field>
+            <field name="datas_stamp" file="biko_crm_lead_pf/static/template/act_vat_stamp.docx" type="base64"/>
+            <field name="fname_stamp">act_vat_stamp.docx</field>
+            <field name="report_name">act_vat</field>
+            <!-- <field name="with_stamp"  eval="False"/> -->
+        </record>     
+        
+       <record id="biko_pf_template_act_without_vat" model="biko.pf.template">
+            <field name="name">Act of completed works without VAT (docx)</field>
+            <field name="res_model">crm.lead</field>
+            <field name="datas" file="biko_crm_lead_pf/static/template/act_without_vat.docx" type="base64"/>
+            <field name="fname">act_without_vat.docx</field>
+            <field name="datas_stamp" file="biko_crm_lead_pf/static/template/act_without_vat_stamp.docx" type="base64"/>
+            <field name="fname_stamp">act_without_vat_stamp.docx</field>
+            <field name="report_name">act_without_vat</field>
+            <!-- <field name="with_stamp"  eval="False"/> -->
+        </record> 
+
+        <record id="biko_pf_template_contract_vat" model="biko.pf.template">
+            <field name="name">Contract with VAT (docx)</field>
+            <field name="res_model">crm.lead</field>
+            <field name="datas" file="biko_crm_lead_pf/static/template/contract_vat.docx" type="base64"/>
+            <field name="fname">contract_vat.docx</field>
+            <field name="datas_stamp" file="biko_crm_lead_pf/static/template/contract_vat_stamp.docx" type="base64"/>
+            <field name="fname_stamp">contract_vat_stamp.docx</field>
+            <field name="report_name">contract_vat</field>
+            <!-- <field name="with_stamp"  eval="False"/> -->
+        </record> 
+
+        <record id="biko_pf_template_contract_without_vat" model="biko.pf.template">
+            <field name="name">Contract without VAT (docx)</field>
+            <field name="res_model">crm.lead</field>
+            <field name="datas" file="biko_crm_lead_pf/static/template/contract_without_vat.docx" type="base64"/>
+            <field name="fname">contract_without_vat.docx</field>
+            <field name="datas_stamp" file="biko_crm_lead_pf/static/template/contract_without_vat_stamp.docx" type="base64"/>
+            <field name="fname_stamp">contract_without_vat_stamp.docx</field>
+            <field name="report_name">contract_without_vat</field>
+            <!-- <field name="with_stamp"  eval="False"/> -->
+        </record> 
+
+
+        
+    </data>
+</odoo>
