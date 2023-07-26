@@ -1,7 +1,7 @@
 # Copyright 2015 ACSONE SA/NV (<http://acsone.eu>)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
-    "name": "Report docx for lead",
+    "name": "BIKO: Report docx for lead",
     "summary": "PF docx for lead",
     "author": "Zhmihova T.N.",
     "company": "BIKO Solutions",

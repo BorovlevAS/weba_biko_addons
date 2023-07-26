@@ -8,13 +8,13 @@ import base64
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
     
-    def _get_report_pf_filename(self):
-        if len(self) > 1:
-            return f'"'
-        else:
-            doc_num = self.name.split('/')[-1]
-            doc_date = self.date_open.strftime("%d.%m.%Y")
-            return f' {doc_num} от {doc_date}'
+    # def _get_report_pf_filename(self):
+    #     if len(self) > 1:
+    #         return f'"'
+    #     else:
+    #         doc_num = self.name.split('/')[-1]
+    #         doc_date = self.date_open.strftime("%d.%m.%Y")
+    #         return f' {doc_num} от {doc_date}'
         
     def _get_report_data(self, report_name, with_stamp):
         # 

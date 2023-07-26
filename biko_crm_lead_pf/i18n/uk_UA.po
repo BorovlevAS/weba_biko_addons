@@ -1,0 +1,305 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* biko_crm_lead_pf
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-26 08:42+0000\n"
+"PO-Revision-Date: 2023-07-26 11:58+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.3.1\n"
+
+#. module: biko_crm_lead_pf
+#. openerp-web
+#: code:addons/biko_crm_lead_pf/static/src/js/report/action_manager_report.js:0
+#, python-format
+msgid ""
+"A popup window with your report was blocked. You may need to change your "
+"browser settings to allow popup windows for this page."
+msgstr ""
+"Спливаюче вікно з вашим звітом було заблоковано. Можливо, вам "
+"знадобиться змінити налаштування браузера, щоб дозволити спливаючі вікна "
+"для цієї сторінки."
+
+#. module: biko_crm_lead_pf
+#: model_terms:ir.ui.view,arch_db:biko_crm_lead_pf.biko_pf_template_view
+msgid "Add Report Menu"
+msgstr "Додати звіт у меню "
+
+#. module: biko_crm_lead_pf
+#: model_terms:ir.ui.view,arch_db:biko_crm_lead_pf.biko_pf_template_view
+msgid "Add new report menu at root level"
+msgstr "Додайте нове меню звіту на кореневому рівні"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_vat__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_vat_with_stamp__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_without_vat__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_without_vat_with_stamp__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_geodesy__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_geodesy_with_stamp__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_laser__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_laser_with_stamp__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_vat__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_vat_with_stamp__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_without_vat__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_without_vat_with_stamp__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_vat__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_vat_with_stamp__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_without_vat__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_without_vat_with_stamp__display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__datas
+msgid "File Content"
+msgstr "Файл шаблона"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__datas_stamp
+msgid "File Content (stamp)"
+msgstr "Файл шаблону (з печаткою)"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__fname
+msgid "File Name"
+msgstr "Ім'я файлу"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__fname_stamp
+msgid "File Name (stamp)"
+msgstr "Ім'я файлу (з печаткою)"
+
+#. module: biko_crm_lead_pf
+#: model_terms:ir.ui.view,arch_db:biko_crm_lead_pf.biko_pf_template_view
+msgid "Get Template"
+msgstr "Отримати шаблон"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_crm_lead__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_vat__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_vat_with_stamp__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_without_vat__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_without_vat_with_stamp__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_geodesy__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_geodesy_with_stamp__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_laser__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_laser_with_stamp__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_vat__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_vat_with_stamp__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_without_vat__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_without_vat_with_stamp__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_vat__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_vat_with_stamp__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_without_vat__id
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_without_vat_with_stamp__id
+msgid "ID"
+msgstr "ID"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__is_report_action
+msgid "Is Report Action"
+msgstr "Додано в меню"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_vat____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_vat_with_stamp____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_without_vat____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_act_without_vat_with_stamp____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_geodesy____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_geodesy_with_stamp____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_laser____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_co_laser_with_stamp____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_vat____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_vat_with_stamp____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_without_vat____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_contract_without_vat_with_stamp____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_vat____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_vat_with_stamp____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_without_vat____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_report_invoice_without_vat_with_stamp____last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Лід/Нагода"
+
+#. module: biko_crm_lead_pf
+#: code:addons/biko_crm_lead_pf/models/pf_template.py:0
+#, python-format
+msgid "No file content!"
+msgstr "Немає вмісту файлу!"
+
+#. module: biko_crm_lead_pf
+#: model_terms:ir.ui.view,arch_db:biko_crm_lead_pf.view_biko_pf_template_tree
+msgid "PF Template"
+msgstr "Шаблон ПФ"
+
+#. module: biko_crm_lead_pf
+#: model_terms:ir.ui.view,arch_db:biko_crm_lead_pf.biko_pf_template_view
+msgid "Remove Report Menu"
+msgstr "Видалити звіт із меню "
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__report_action_id
+msgid "Report Action"
+msgstr "Report Action"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__report_action_stamp_id
+msgid "Report Action (with stamp)"
+msgstr "Report Action (with stamp)"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__report_name
+msgid "Report Name"
+msgstr "Назва звіту"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__res_model
+msgid "Resource Model"
+msgstr "Модель, до якої прив'язана"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,field_description:biko_crm_lead_pf.field_biko_pf_template__name
+msgid "Template Name"
+msgstr "Назва шаблону"
+
+#. module: biko_crm_lead_pf
+#: model:ir.actions.act_window,name:biko_crm_lead_pf.biko_pf_template_action_view_tree
+#: model:ir.ui.menu,name:biko_crm_lead_pf.biko_menu_pf_template
+msgid "Templates  for PF"
+msgstr "Шаблони для ПФ"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model.fields,help:biko_crm_lead_pf.field_biko_pf_template__res_model
+msgid "The database object this attachment will be attached to."
+msgstr "Об’єкт бази даних, до якого буде прикріплено це вкладення."
+
+#. module: biko_crm_lead_pf
+#. openerp-web
+#: code:addons/biko_crm_lead_pf/static/src/js/report/action_manager_report.js:0
+#, python-format
+msgid "Warning"
+msgstr "УВАГА"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_biko_pf_template
+msgid "biko.pf.template"
+msgstr "biko.pf.template"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_act_vat
+msgid "report.act_vat"
+msgstr "report.act_vat"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_act_vat_with_stamp
+msgid "report.act_vat_with_stamp"
+msgstr "report.act_vat_with_stamp"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_act_without_vat
+msgid "report.act_without_vat"
+msgstr "report.act_without_vat"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_act_without_vat_with_stamp
+msgid "report.act_without_vat_with_stamp"
+msgstr "report.act_without_vat_with_stamp"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_co_geodesy
+msgid "report.co_geodesy"
+msgstr "report.co_geodesy"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_co_geodesy_with_stamp
+msgid "report.co_geodesy_with_stamp"
+msgstr "report.co_geodesy_with_stamp"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_co_laser
+msgid "report.co_laser"
+msgstr "report.co_laser"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_co_laser_with_stamp
+msgid "report.co_laser_with_stamp"
+msgstr "report.co_laser_with_stamp"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_contract_vat
+msgid "report.contract_vat"
+msgstr "report.contract_vat"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_contract_vat_with_stamp
+msgid "report.contract_vat_with_stamp"
+msgstr "report.contract_vat_with_stamp"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_contract_without_vat
+msgid "report.contract_without_vat"
+msgstr "report.contract_without_vat"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_contract_without_vat_with_stamp
+msgid "report.contract_without_vat_with_stamp"
+msgstr "report.contract_without_vat_with_stamp"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_invoice_vat
+msgid "report.invoice_vat"
+msgstr "report.invoice_vat"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_invoice_vat_with_stamp
+msgid "report.invoice_vat_with_stamp"
+msgstr "report.invoice_vat_with_stamp"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_invoice_without_vat
+msgid "report.invoice_without_vat"
+msgstr "report.invoice_without_vat"
+
+#. module: biko_crm_lead_pf
+#: model:ir.model,name:biko_crm_lead_pf.model_report_invoice_without_vat_with_stamp
+msgid "report.invoice_without_vat_with_stamp"
+msgstr "report.invoice_without_vat_with_stamp"

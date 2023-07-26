@@ -7,9 +7,8 @@
     <record id="view_biko_pf_template_tree" model="ir.ui.view">
         <field name="model">biko.pf.template</field>
         <field name="arch" type="xml">
-            <tree string="PF Template">
+            <tree string="PF Template" create='false'>
                 <field name="name" />
-                <!-- <field name="with_stamp" /> -->
                 <field name="is_report_action" />
             </tree>
         </field>
@@ -19,7 +18,7 @@
         <field name="name">biko.pf.template</field>
         <field name="model">biko.pf.template</field>
         <field name="arch" type="xml">
-            <form string="Get Template">
+            <form string="Get Template" create='false'>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button
@@ -29,7 +28,7 @@
                             icon="fa-plus-square"
                             help="Add new report menu at root level"
                             class="oe_stat_button"
-                            attrs="{'invisible': [('is_report_action','=', True)]}" 
+                            attrs="{'invisible': [('is_report_action','=', True)]}"
                         />
                         <button
                             name="remove_report_menu"
@@ -44,28 +43,23 @@
                         <field name="name" colspan="3" />
                     </h1>
                     <group>
-                            <group>
-                                <field name="fname" invisible="1" />
-                                <field name="datas" filename="fname" />
-                            </group>
-                            <group>
-                                <field name="fname_stamp" invisible="1" />
-                                <field name="datas_stamp" filename="fname_stamp" />
-                            </group>                        
-                        <group>                        
+                        <group>
+                            <field name="fname" invisible="1" />
+                            <field name="datas" filename="fname" />
+                        </group>
+                        <group>
+                            <field name="fname_stamp" invisible="1" />
+                            <field name="datas_stamp" filename="fname_stamp" />
+                        </group>
+                        <group>
                             <field name="is_report_action" invisible="1" />
                             <field name="report_name" />
-                            <field name="res_model" /> 
-
+                            <field name="res_model" />
                         </group>
-                           
-                        
-                        <!-- <field name="with_stamp" /> -->
-                        <!-- <field name="redirect_action" /> -->
                     </group>
 
                 </sheet>
-                
+
                 <!-- <group>
                     <group>
                         <field name="file" widget="selection" />
