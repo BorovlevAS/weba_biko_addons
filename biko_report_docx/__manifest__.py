@@ -5,18 +5,18 @@
     "summary": "Base module to create docx report",
     "author": "Zhmihova T.N.",
     "company": "BIKO Solutions",
-    # "website": "",
     "category": "Reporting",
     "version": "14.0.1.0.0",
-    # "development_status": "Mature",
     "license": "AGPL-3",
     "depends": [
         "base",
         "web"
-        ],    # , "web"
+        ],   
     "data": [
         "views/webclient_templates.xml",
         ],
-    # "demo": ["demo/report.xml"],
+    "external_dependencies": {
+        "python": ['docxtpl'],
+        },
     "installable": True,
 }
