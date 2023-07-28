@@ -8,14 +8,6 @@ import base64
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
     
-    # def _get_report_pf_filename(self):
-    #     if len(self) > 1:
-    #         return f'"'
-    #     else:
-    #         doc_num = self.name.split('/')[-1]
-    #         doc_date = self.date_open.strftime("%d.%m.%Y")
-    #         return f' {doc_num} от {doc_date}'
-        
     def _get_report_data(self, report_name, with_stamp):
         # 
         for lead in self:            
@@ -47,21 +39,16 @@ class CrmLead(models.Model):
                 dic['path'] = f"{path}/static/template/{report[name_file]}"
                 dic['is_template'] = False
                 
-               
-            # dic['current_date'] = date.today()
-            dic['current_date'] = fields.Date.context_today(lead)
+            dic['current_date'] = fields.Date.context_today(lead).strftime("%d-%m-%Y")
             dic['code'] = lead.code
             dic['partner_id_name'] = f'{lead.partner_id.name}'
             dic['function'] = lead.function
-            dic['contact_name'] = lead.contact_name
-            
+            dic['contact_name'] = lead.contact_name            
             
             dic['biko_amount_untaxed'] = lead.biko_amount_untaxed
             dic['biko_amount_tax'] = lead.biko_amount_tax
             dic['biko_amount_total'] = lead.biko_amount_total
-            dic['avans70'] = lead.biko_amount_total * 0.7 
-            
-            
+            dic['avans70'] = lead.biko_amount_total * 0.7             
             # А может аванс% брать из поля x_advance? или попросту x_advance_pay
             dic['remainder'] = 100 - lead.x_advance
             dic['biko_amount_ukr_text'] = lead.biko_amount_ukr_text
@@ -73,12 +60,11 @@ class CrmLead(models.Model):
             dic['x_object_address'] = lead.x_object_address
             dic['x_term'] = lead.x_term
             dic['x_advance'] = lead.x_advance
-            dic['x_date_act'] = lead.x_date_act
+            dic['x_date_act'] = lead.x_date_act.strftime("%d-%m-%Y")
             dic['x_contract_number'] = lead.x_contract_number
-            dic['x_date_contract'] = lead.x_date_contract
+            dic['x_date_contract'] = lead.x_date_contract.strftime("%d-%m-%Y")
             dic['x_advance_pay'] = lead.x_advance_pay
-            dic['over'] = lead.biko_amount_total - lead.x_advance_pay
-            
+            dic['over'] = lead.biko_amount_total - lead.x_advance_pay            
             
             nom = 0
             products = []

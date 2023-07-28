@@ -38,4 +38,19 @@
             </xpath>
         </field>
     </record>
+
+    <record id="biko_crm_case_form_view_oppor_inherit_product" model="ir.ui.view">
+        <field name="name">BIKO: add fields lead.oppor</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm_opportunity_product.crm_case_form_view_oppor_inherit_product" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='price_unit']" position="after">
+                <field name="biko_currency_id" optional="hide" />
+                <field name="biko_price_subtotal" optional="hide" />
+                <field name="biko_price_tax" optional="hide" />
+                <field name="biko_price_total" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+
 </odoo>
