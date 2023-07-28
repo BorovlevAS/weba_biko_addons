@@ -53,7 +53,7 @@ class PfTemplate(models.Model):
         
         if self.datas_stamp:        
             vals = {
-                "name": f"{self.name} with stamp",
+                "name": f"{self.name} з печаткою",
                 "model": self.res_model,
                 "report_type": "docx",
                 "report_name": f"{self.report_name}_with_stamp",
