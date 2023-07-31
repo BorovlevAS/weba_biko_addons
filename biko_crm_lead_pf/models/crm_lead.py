@@ -60,9 +60,17 @@ class CrmLead(models.Model):
             dic['x_object_address'] = lead.x_object_address
             dic['x_term'] = lead.x_term
             dic['x_advance'] = lead.x_advance
-            dic['x_date_act'] = lead.x_date_act.strftime("%d-%m-%Y")
+            if isinstance(lead.x_date_act, date):
+                try: 
+                    dic['x_date_act'] = lead.x_date_act.strftime("%d-%m-%Y")
+                except ValueError:
+                    dic['x_date_act'] = ""
             dic['x_contract_number'] = lead.x_contract_number
-            dic['x_date_contract'] = lead.x_date_contract.strftime("%d-%m-%Y")
+            if isinstance(lead.x_date_contract, date):
+                try:
+                    dic['x_date_contract'] = lead.x_date_contract.strftime("%d-%m-%Y")
+                except ValueError:
+                    dic['x_date_contract'] = ""
             dic['x_advance_pay'] = lead.x_advance_pay
             dic['over'] = lead.biko_amount_total - lead.x_advance_pay            
             
