@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="biko_crm_lead_view_form_total_inherit" model="ir.ui.view">
+        <field name="name">BIKO: add total in lead</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='lead_product_ids']" position="after">
+                <group name="note_group" col="6" class="mt-2 mt-md-0">
+                    <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                        <field
+                            name="biko_amount_untaxed"
+                            widget='monetary'
+                            options="{'currency_field': 'company_currency'}"
+                        />
+                        <field
+                            name="biko_amount_tax"
+                            widget='monetary'
+                            options="{'currency_field': 'company_currency'}"
+                        />
+                        <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                            <label for="biko_amount_total" />
+                        </div>
+                        <field
+                            name="biko_amount_total"
+                            nolabel="1"
+                            class="oe_subtotal_footer_separator"
+                            widget='monetary'
+                            options="{'currency_field': 'company_currency'}"
+                        />
+                    </group>
+                    <field name="biko_currency_name" invisible="1"/>
+                    <field name="biko_currency_cent_name" invisible="1"/>
+                    <field name="biko_amount_ukr_text" invisible="1"/>
+                    <field name="biko_amount_untaxed_ukr_text" invisible="1"/>
+                    <field name="biko_taxed_ukr_text" invisible="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="biko_crm_case_form_view_oppor_inherit_product" model="ir.ui.view">
+        <field name="name">BIKO: add fields lead.oppor</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm_opportunity_product.crm_case_form_view_oppor_inherit_product" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='price_unit']" position="after">
+                <field name="biko_currency_id" optional="hide" />
+                <field name="biko_price_subtotal" optional="hide" />
+                <field name="biko_price_tax" optional="hide" />
+                <field name="biko_price_total" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

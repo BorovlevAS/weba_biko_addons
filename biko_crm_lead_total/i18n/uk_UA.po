@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* biko_crm_lead_total
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-07-26 09:00+0000\n"
+"PO-Revision-Date: 2023-07-26 12:02+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.3.1\n"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead__biko_amount_ukr_text
+msgid "Biko Amount Ukr Text"
+msgstr "Biko Amount Ukr Text"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead__biko_amount_untaxed_ukr_text
+msgid "Biko Amount Untaxed Ukr Text"
+msgstr "Biko Amount Untaxed Ukr Text"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead__biko_currency_cent_name
+msgid "Biko Currency Cent Name"
+msgstr "Biko Currency Cent Name"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead__biko_currency_name
+msgid "Biko Currency Name"
+msgstr "Biko Currency Name"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead__biko_taxed_ukr_text
+msgid "Biko Taxed Ukr Text"
+msgstr "Biko Taxed Ukr Text"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead_product__biko_currency_id
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead__display_name
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead_product__display_name
+msgid "Display Name"
+msgstr "Відображувана назва"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead__id
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead_product__id
+msgid "ID"
+msgstr "ID"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead____last_update
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead_product____last_update
+msgid "Last Modified on"
+msgstr "Останні зміни на"
+
+#. module: biko_crm_lead_total
+#: model:ir.model,name:biko_crm_lead_total.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Лід/Нагода"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead_product__biko_price_subtotal
+msgid "Subtotal"
+msgstr "Проміжний підсумок"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead__biko_amount_tax
+msgid "Taxes"
+msgstr "Податки"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead__biko_amount_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead_product__biko_price_total
+msgid "Total"
+msgstr "Всього"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead_product__biko_price_tax
+msgid "Total Tax"
+msgstr "Загальний податок"
+
+#. module: biko_crm_lead_total
+#: model:ir.model.fields,field_description:biko_crm_lead_total.field_crm_lead__biko_amount_untaxed
+msgid "Untaxed Amount"
+msgstr "Неоподатковувана сума"
+
+#. module: biko_crm_lead_total
+#: model:ir.model,name:biko_crm_lead_total.model_crm_lead_product
+msgid "crm.lead.product"
+msgstr "crm.lead.product"

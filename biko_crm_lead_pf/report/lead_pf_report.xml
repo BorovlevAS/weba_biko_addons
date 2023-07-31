@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- <record id="action_biko_lead_pf_docx" model="ir.actions.report">
+        <field name="name">Commercial offer geodesy and geology (docx)</field>
+        <field name="model">crm.lead</field>
+        <field name="report_type">docx</field>
+        <field name="report_name">biko_report_docx.co_geodesy</field>
+        <field name="report_file">biko_report_docx_docx</field>
+        <field name="print_report_name">(object._get_report_pf_filename())</field>
+        <field name="binding_model_id" ref="crm.model_crm_lead"/>
+        <field name="binding_type">report</field>
+        <field name="binding_view_types">form,list</field>
+    </record> -->
+
+</odoo>
