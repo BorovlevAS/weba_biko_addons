@@ -37,6 +37,7 @@ class ReportDocxAbstract(models.AbstractModel):
     def create_docx_report(self, docids, data):
         objs = self._get_objs_for_report(docids, data)
         context_leads = self.generate_docx_report(data, objs)
+        context_leads['object']=objs
         template_path = context_leads["path"]
         
         doc = DocxTemplate(template_path)  
