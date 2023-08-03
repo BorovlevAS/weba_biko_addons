@@ -46,7 +46,7 @@ class PfTemplate(models.Model):
             "print_report_name": f"'{self.report_name} - %s' % (object.name).replace('/', '')",
             "binding_model_id": self.env["ir.model"].search([("model", "=", self.res_model)]).id,
             "binding_type": "report",
-            "binding_view_types": "form,list",
+            "binding_view_types": "form",
         }
         report_action = self.env["ir.actions.report"].create(vals)
         self.report_action_id = report_action
