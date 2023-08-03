@@ -71,6 +71,11 @@ class CrmLead(models.Model):
                     dic['x_date_contract'] = lead.x_date_contract.strftime("%d-%m-%Y")
                 except ValueError:
                     dic['x_date_contract'] = ""
+            if isinstance(lead.x_date_invoic, date):
+                try:
+                    dic['x_date_invoic'] = lead.x_date_invoic.strftime("%d-%m-%Y")
+                except ValueError:
+                    dic['x_date_invoic'] = ""                    
             dic['x_advance_pay'] = lead.x_advance_pay
             dic['over'] = lead.biko_amount_total - lead.x_advance_pay            
             
