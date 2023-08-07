@@ -1,6 +1,6 @@
 {
     "name": "BIKO: Сводный отчет по лидам",
-    "version": "14.0.1.1.1",
+    "version": "14.0.1.2.1",
     "author": "Borovlev A.S.",
     "company": "BIKO Solutions",
     "depends": [
