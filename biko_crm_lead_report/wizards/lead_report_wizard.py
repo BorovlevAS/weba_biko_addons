@@ -191,9 +191,50 @@ class StockMovesWizard(models.TransientModel):
             unique_id,
             "",
             7,
-            "4. Сума провалених угод",
+            "5. Сума провалених угод",
             lead_lost_sum,
         )
+        # Количество холодніх/горячих звонков
+        domain = [
+            ("date", ">=", self.start_date),
+            ("date", "<=", self.end_date),            
+            ("active", "=", True),
+        ]
+
+        if self.manager_ids:
+            domain += [("user_id", "in", self.manager_ids.ids)]
+            
+        all_calls = self.env["crm.phonecall"].read_group([],['id'],'partner_id')
+        calls = self.env["crm.phonecall"].read_group(domain,['id'],'partner_id')
+        
+        cold_calls = 0
+        hot_calls = 0
+        for call in calls:
+            if call["partner_id_count"] == 1:
+                # проверим на то, что холодный
+                filtered_dicts = list(filter(lambda d: d.get('partner_id') == call["partner_id"], all_calls))
+                if len(filtered_dicts) == 1 and filtered_dicts[0]["partner_id_count"] == 1:
+                    cold_calls += 1
+                else:
+                    hot_calls += 1
+            else:
+                hot_calls += call["partner_id_count"]
+
+        self._add_report_line(
+            unique_id,
+            "04_calls",
+            8,
+            "4.1 Холодні дзвінки",
+            cold_calls,
+        )
+        
+        self._add_report_line(
+            unique_id,
+            "04_calls",
+            9,
+            "4.2 Теплі дзвінки",
+            hot_calls,
+        )        
 
     def open_report(self):
         self.check_date_range()
