@@ -14,6 +14,7 @@ class ConsolidatedLeadReport(models.Model):
             ("00_tenders", "ТЕНДЕРА"),
             ("01_commercial", "КОМЕРЦІЙНІ ПРОПОЗИЦІЇ"),
             ("03_money", "ГРОШІ"),
+            ("04_calls", "ДЗВІНКИ"),
         ],
     )
 
